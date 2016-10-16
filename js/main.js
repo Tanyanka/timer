@@ -15,7 +15,7 @@ function stop () {
 }
 
 toggleBtn.addEventListener('click', function () {
-    (watch.isOn) ? start() : stop();
+    (watch.isOn) ? stop() : start();
 });
 
 resetBtn.addEventListener('click', function () {
