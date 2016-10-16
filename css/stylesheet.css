@@ -1,0 +1,11 @@
+#timer {
+    margin-top: 200px;
+    text-align: center;
+    font-size: 80px;
+    color: #000;
+}
+#buttons {
+    display: block;
+    margin: 0 auto;
+    width: 251px;
+}
