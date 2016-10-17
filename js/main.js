@@ -1,6 +1,7 @@
 var timer = document.getElementById('timer');
 var toggleBtn = document.getElementById('start');
 var resetBtn = document.getElementById('reset');
+var splitBtn = document.getElementById('split');
 
 var watch = new Stopwatch('timer');
 
@@ -22,4 +23,8 @@ resetBtn.addEventListener('click', function () {
     if (!watch.isOn) {
         watch.reset();
     }
-})
+});
+
+splitBtn.addEventListener('click', function () {
+    watch.lap();
+});
