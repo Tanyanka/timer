@@ -1,7 +1,9 @@
+var time = 0;
+var interval;
+var offset;
+var d = document.querySelector('#timer');
+
 function Stopwatch(elem) {
-   var time = 0;
-   var interval;
-   var offset;
 
    function update () {
        if (this.isOn) {
@@ -37,10 +39,10 @@ function Stopwatch(elem) {
        if (seconds.length < 2) {
            seconds = '0' + seconds;
        }
-       if (milliseconds.length < 3) {
+       if (milliseconds.length < 2) {
+           milliseconds = '00' + milliseconds;
+       } else if (milliseconds.length < 3){
            milliseconds = '0' + milliseconds;
-       } else if (milliseconds.length >= 1){
-           milliseconds = '' + milliseconds;
        }
        return hours + ' : ' + minutes + ' : ' + seconds + ' : ' + milliseconds;
    }
@@ -64,15 +66,17 @@ function Stopwatch(elem) {
    }
 
    this.lap = function () {
-       var split = Date.now();
-       offset = split;
+       var split = d.innerHTML;
        var li = document.createElement('li');
-       li.innerHTML = offset;
-       document.ul.appendChild(li);
+       li.innerHTML = split;
+       results.appendChild(li);
    }
 
    this.reset = function () {
        time = 0;
        update();
+       while (results.firstChild) {
+           results.removeChild(results.firstChild);
+       }
    };
 }

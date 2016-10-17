@@ -6,6 +6,13 @@
 }
 #buttons {
     display: block;
+    position: relative;
     margin: 0 auto;
     width: 251px;
+}
+#results {
+    overflow: hidden;
+    margin-top: 100px;
+    width: 100%;
+    text-align: center;
 }
